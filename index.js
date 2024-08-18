@@ -5,11 +5,18 @@ import {name as appName} from './app.json';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import App from './App';
 import {RestyleProvider, lightPalette} from './src/components';
+import {enableKioskMode} from 'kiosk-react-native';
+import {hideNavigationBar} from 'react-native-navigation-bar-color';
+
+// Enable Kiosk Mode
+enableKioskMode();
+hideNavigationBar();
 
 export default function Main() {
   return (
     <SafeAreaProvider>
       <StatusBar
+        hidden
         backgroundColor="transparent"
         translucent
         barStyle="dark-content"

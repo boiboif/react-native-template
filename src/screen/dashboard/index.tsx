@@ -4,6 +4,7 @@ import React, {ComponentProps, useState} from 'react';
 import {ScrollView} from 'react-native';
 import {Button, Modal, Portal} from 'react-native-paper';
 import ReactSvg from '@/assets/svg/react.svg';
+import {disableKioskMode} from 'kiosk-react-native';
 
 const containerStyle = {
   backgroundColor: 'white',
@@ -44,6 +45,10 @@ const Dashboard = () => {
           setVisible(true);
         }}>
         App
+      </Button>
+
+      <Button mode="contained" onPress={disableKioskMode}>
+        取消kiosk
       </Button>
 
       <ReactSvg />
